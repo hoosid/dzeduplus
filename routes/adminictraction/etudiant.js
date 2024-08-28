@@ -12,7 +12,7 @@ const upload = multer({ storage: storage });
 router.get('/etudiant_crud', async (req, res) => {
     try {
         const user = req.query.user ? decodeURIComponent(req.query.user) : null;
-        const niveau = req.query.niveau ? decodeURIComponent(req.query.niveau) : null;
+        // const niveau = req.query.niveau ? decodeURIComponent(req.query.niveau) : null;
         const searchQuery = req.query.search ? req.query.search.trim() : '';
 
         // Fetching additional data
@@ -27,9 +27,9 @@ router.get('/etudiant_crud', async (req, res) => {
                         user: {
                             contains: searchQuery,
                         },
-                        niveau: {
-                            contains: searchQuery,
-                        }
+                        // niveau: {
+                        //     contains: searchQuery,
+                        // }
                     }
                 ]
             }
